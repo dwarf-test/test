@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Gather Data') {
             steps {
-                def list = sh "mkdir -p output"
+                def list = sh "groovy -t ddae1e41099bb89a636241818107dff969c27695 ListReposInOrg Terasology"
+		println(list)
             }
         }
     }

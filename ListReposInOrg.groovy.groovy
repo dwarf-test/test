@@ -9,8 +9,9 @@ import org.kohsuke.github.GitHub
 
 class ListReposInOrg extends GitHub {
 
-	static void main(args) {
+	static String[] main(args) {
 		
+		def list = []
 		def cli = new CliBuilder(usage: 'groovy -t <personal access token> ListReposInOrg.groovy <organization>')
 		cli.t(longOpt: 'token', 'personal access token', required: false  , args: 1 )
 		
@@ -31,7 +32,8 @@ class ListReposInOrg extends GitHub {
 		}
 		
 		githubCom.getOrganization(org).listRepositories().each {
-			println it.getFullName();
+			list << it.getFullName();
 		}
+		return list
 	}
 }
