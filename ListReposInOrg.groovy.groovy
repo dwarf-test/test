@@ -34,6 +34,6 @@ class ListReposInOrg extends GitHub {
 		githubCom.getOrganization(org).listRepositories().each {
 			list << it.getFullName();
 		}
-		return list
+		println(list)
 	}
 }
