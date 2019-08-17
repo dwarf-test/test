@@ -4,13 +4,11 @@ pipeline {
 	stages {
 		stage('Gather Data') {
 			steps {
-				list = sh (
-					script: "groovy ListReposInOrg.groovy",
-					returnStdout: true
-				).trim()
-				println("$list")
+				script {
+				    def list = sh script: './groovyw ListReposInOrg.groovy', returnStdout: true
+				    println("$list")
+				}
 			}
 		}
 	}
 }
-
