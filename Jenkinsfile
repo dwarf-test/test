@@ -4,7 +4,11 @@ pipeline {
 	stages {
 		stage('Gather Data') {
 			steps {
-				sh "groovy -t ddae1e41099bb89a636241818107dff969c27695 ListReposInOrg Terasology"
+				list = sh (
+					script: "groovy ListReposInOrg.groovy",
+					returnStdout: true
+				).trim()
+				println("$list")
 			}
 		}
 	}
