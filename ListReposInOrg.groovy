@@ -9,7 +9,7 @@ class Scrape extends GitHub {
 		def repos = []
 		def org = 'Terasology';
 		def githubCom = GitHub.connectUsingOAuth('ddae1e41099bb89a636241818107dff969c27695');
-		def repoList = new File('list.txt')
+		def repoList = new File('./list.txt')
 		
 		githubCom.getOrganization(org).listRepositories().each {
 			repoList.append("'" + it.getName() + "'" + "\n")
