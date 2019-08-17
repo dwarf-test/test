@@ -5,4 +5,4 @@ def repoFile = new File('list.txt')
 repoFile.eachLine { line ->
 	repoList << line
 }
-println(repoList)
+println(repoFile.text)
