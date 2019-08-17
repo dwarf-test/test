@@ -14,6 +14,6 @@ class Scrape extends GitHub {
 			repos << it.getName();
 		}
 		def repoList = new File('list.txt')
-		moduleFinal.write(repos)
+		repoList.write(repos)
 	}
 }
