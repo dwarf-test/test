@@ -7,7 +7,7 @@ pipeline {
 				script {
 					sh './groovyw ListReposInOrg.groovy'
 					def repoList = sh script: './groovyw LoadRepo.groovy', returnStdout: true
-					repoList.split("\n")
+					repoList.split("|")
 			    	repoList.each { repo ->
 						println(repo)
 						dir(repo) {
