@@ -7,7 +7,7 @@ pipeline {
 				script {
 					sh './groovyw ListReposInOrg.groovy'
 				    def repoList = sh script: './groovyw LoadRepos.groovy', returnStdout: true
-			    	reposList.each { repo ->
+			    	repoList.each { repo ->
 						println(repo)
 						dir(repo) {
 							sh "pwd"		
