@@ -7,6 +7,8 @@ pipeline {
 				script {
 				    def list = sh script: './groovyw ListReposInOrg.groovy', returnStdout: true
 				    println("$list")
+				    println("hello")
+				    println("$list")
 				}
 			}
 		}
