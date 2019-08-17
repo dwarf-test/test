@@ -12,7 +12,7 @@ class Scrape extends GitHub {
 		def repoList = new File('list.txt')
 		
 		githubCom.getOrganization(org).listRepositories().each {
-			repoList.append(it.getName() + "|")
+			repoList.append(it.getName() + " ")
 		}
 	}
 }
