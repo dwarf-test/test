@@ -5,9 +5,8 @@ pipeline {
 		stage('Gather Data') {
 			steps {
 				script {
-				    def list = sh script: './groovyw ListReposInOrg.groovy', returnStdout: true
-				    println("$list")
-				    println("hello")
+					sh './groovyw ListReposInOrg.groovy'
+				    def list = sh script: './groovyw LoadRepos.groovy', returnStdout: true
 				    println("$list")
 				}
 			}

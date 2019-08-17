@@ -5,15 +5,15 @@ package org.kohsuke.github
 import org.kohsuke.github.GitHub
 
 class Scrape extends GitHub {
-
 	static String[] main(args) {
-		def list = []
-		def org = "Terasology";
-		def githubCom = GitHub.connectUsingOAuth("ddae1e41099bb89a636241818107dff969c27695");
+		def repos = []
+		def org = 'Terasology';
+		def githubCom = GitHub.connectUsingOAuth('ddae1e41099bb89a636241818107dff969c27695');
 		
 		githubCom.getOrganization(org).listRepositories().each {
-			list << it.getName();
+			repos << it.getName();
 		}
-		return list
+		list = new File('list.txt')
+		moduleFinal.write(repos)
 	}
 }
