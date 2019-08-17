@@ -1,12 +1,3 @@
-def loop(repoList) {
-	reposList.each { repo ->
-		println(repo)
-		dir(repo) {
-			sh "pwd"		
-		}
-	}
-}
-
 pipeline {
 	agent any
 
@@ -16,7 +7,12 @@ pipeline {
 				script {
 					sh './groovyw ListReposInOrg.groovy'
 				    def repoList = sh script: './groovyw LoadRepos.groovy', returnStdout: true
-				    loop(repoList)
+			    	reposList.each { repo ->
+						println(repo)
+						dir(repo) {
+							sh "pwd"		
+						}
+					}
 				}
 			}
 		}
