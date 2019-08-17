@@ -1,4 +1,4 @@
 #!/usr/bin/env groovy
 
-list = new File('list.txt')
-println list.text
+def repoList = new File('list.txt')
+println repoList.text

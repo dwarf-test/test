@@ -13,7 +13,7 @@ class Scrape extends GitHub {
 		githubCom.getOrganization(org).listRepositories().each {
 			repos << it.getName();
 		}
-		list = new File('list.txt')
+		def repoList = new File('list.txt')
 		moduleFinal.write(repos)
 	}
 }
