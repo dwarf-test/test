@@ -6,6 +6,7 @@ pipeline {
 			steps {
 				script {
 					sh './groovyw ListReposInOrg.groovy'
+					sh 'ls -l'
 				    def repoList = []
 					def repoFile = new File('list.txt')
 					repoFile.eachLine { line ->
