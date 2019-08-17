@@ -6,8 +6,8 @@ pipeline {
 			steps {
 				script {
 					sh './groovyw ListReposInOrg.groovy'
-				    def list = sh script: './groovyw LoadRepos.groovy', returnStdout: true
-				    println("$list")
+				    def repoList = sh script: './groovyw LoadRepos.groovy', returnStdout: true
+				    println("$repoList")
 				}
 			}
 		}
