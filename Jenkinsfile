@@ -1,3 +1,5 @@
+def repoSrc
+
 pipeline {
 	agent any
 
