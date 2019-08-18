@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-def run() {
+def load() {
 	def repoFile = new File('list.txt').text
 	def repoList = repoFile.split(",")
 	

@@ -15,7 +15,7 @@ pipeline {
 			steps {
 				script {
 					sh './groovyw ListReposInOrg.groovy'
-					def repoList = repoSrc.run()
+					def repoList = repoSrc.load()
 					repoList.each {
 						println(it)
 						dir(it) {		
