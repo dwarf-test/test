@@ -6,4 +6,5 @@ def load() {
 	
 	return repoList
 }
-	
+
+return this
