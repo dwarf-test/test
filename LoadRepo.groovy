@@ -10,8 +10,9 @@ def fetch() {
 	def repoList = new File('list.txt')
 
 	githubCom.getOrganization(org).listRepositories().each {
-		repoList.append(it.getName() + ",")
+		repos << it.getName()
 	}
+	return repos
 }
 
 def load() {

@@ -1,12 +1,10 @@
-def repoSrc
-
 node {
 	stage('Load') {
-		repoSrc = load 'LoadRepo.groovy'
+		
 	}
 	stage('Gather Data') {
-		repoSrc.fetch()
-		def repoList = repoSrc.load()
+		def repoSrc = load 'LoadRepo.groovy'
+		def repoList = repoSrc.fetch()
 		repoList.each {
 			println(it)
 			dir(it) {		
