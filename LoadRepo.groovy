@@ -1,5 +1,9 @@
 #!/usr/bin/env groovy
 
-def repoFile = new File('list.txt')
-println(repoFile.text)
-
+def run() {
+	def repoFile = new File('list.txt').text
+	def repoList = repoFile.split(",")
+	
+	return repoList
+}
+	

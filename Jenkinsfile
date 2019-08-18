@@ -2,13 +2,15 @@ pipeline {
 	agent any
 
 	stages {
+		stage('Load') {
+			repoSrc = load 'LoadRepo.groovy'		
+		}
 		stage('Gather Data') {
 			steps {
 				script {
 					sh './groovyw ListReposInOrg.groovy'
-					def repoList = sh script: './groovyw LoadRepo.groovy', returnStdout: true
-					repoList.split(",")
-			    		repoList.each {
+					def repoList = repoSrc.run()
+					repoList.each {
 						println(it)
 						dir(it) {		
 						}
