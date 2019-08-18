@@ -14,7 +14,7 @@ pipeline {
 		stage('Gather Data') {
 			steps {
 				script {
-					sh './groovyw ListReposInOrg.groovy'
+					repoSrc.fetch()
 					def repoList = repoSrc.load()
 					repoList.each {
 						println(it)
