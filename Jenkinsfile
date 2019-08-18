@@ -6,7 +6,9 @@ pipeline {
 	stages {
 		stage('Load') {
 			steps {
-				repoSrc = load 'LoadRepo.groovy'		
+				script {
+					repoSrc = load 'LoadRepo.groovy'	
+				}	
 			}	
 		}
 		stage('Gather Data') {
