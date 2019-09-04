@@ -10,7 +10,6 @@ node {
 					repoFn.scrape()
 				}
 			repoFn.push()
-			}
 		}
 	}
 }
