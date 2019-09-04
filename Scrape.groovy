@@ -60,7 +60,7 @@ def exec() {
 }
 
 def push() {
-	withCredentials([usernamePassword(credentialsId: 'majordwarf', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+	withCredentials([usernamePassword(credentialsId: 'GooeyHub', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
     	sh("git add .")
     	sh("git commit -m \"Updated Index Data\"")
     	sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@https://github.com/GooeyTests/TempIndex')
